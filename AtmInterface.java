@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Main {
+public class AtmInterface {
   public static Scanner sc = new Scanner(System.in);
   public static ArrayList<String> list = new ArrayList<>();
 
