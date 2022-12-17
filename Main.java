@@ -5,6 +5,7 @@ public class Main {
   public static Scanner sc = new Scanner(System.in);
   public static ArrayList<String> list = new ArrayList<>();
 
+  // "transac" function displays the transaction history for the user
   public static void transac(int balance){
     for (String i : list) {
       System.out.println(i);
@@ -12,6 +13,7 @@ public class Main {
     ask(balance);
   }
 
+  // "login" function checks if the given username and pin are valid
   public static void login(String username, int pin) {
     if(username.contains("test") && pin == 0000){
         list.add("Logged in");
@@ -23,6 +25,7 @@ public class Main {
     }
   }
 
+  // "withdraw" function allows the user to withdraw a specified amount from their account
   public static void withdraw(int balance, int amount){
     if(amount <= balance && amount>=0){
         balance -= amount;
@@ -35,6 +38,7 @@ public class Main {
     }
   }
 
+  // "deposit" function allows the user to deposit a specified amount into their account
   public static void deposit(int balance, int amount){
     if(amount >= 0){
         balance += amount;
@@ -47,6 +51,7 @@ public class Main {
     }
   }
 
+  // "transfer" function allows the user to transfer a specified amount to another user's account
   public static void transfer(int balance, int amount){
     if((amount <= balance) && (amount >= 0)){
         System.out.print("Enter reciver's username: ");
@@ -62,6 +67,7 @@ public class Main {
     }
   }
 
+  // "quit" function allows the user to exit the program
   public static void quit(int balance, char qresponse){
     if(qresponse == 'y' || qresponse == 'Y'){
       System.out.println("---------------Logged out---------------");
@@ -71,6 +77,7 @@ public class Main {
       ask(balance);
   }
 
+  // "ask" function presents the user with a list of options and allows them to choose one of the actions
   public static void ask(int bal){
         System.out.println("----------------------------------------");
         System.out.println();
