@@ -19,55 +19,55 @@
 
 
 # Psuesocode:- 
-  import java.util.Scanner
-  import java.util.ArrayList
+      import java.util.Scanner
+      import java.util.ArrayList
 
-  class Main {
+      class Main {
 
-      // Initialize Scanner object and ArrayList
-      public static Scanner sc = new Scanner(System.in)
-      public static ArrayList<String> list = new ArrayList<>()
+          // Initialize Scanner object and ArrayList
+          public static Scanner sc = new Scanner(System.in)
+          public static ArrayList<String> list = new ArrayList<>()
 
-      // Display transaction history to user
-      public static void transac(int balance) {
-          for (String i : list) {
-              print(i)
-          }
-          ask(balance)
-      }
-
-      // Check if login information is valid
-      public static void login(String username, int pin) {
-          if (username.contains("test") && pin == 0000) {
-              list.add("Logged in")
-              ask(10000)
-          } else {
-              print("Enter valid info!")
-              print("Username followed by pin seperated with a space: ")
-              login(sc.next(), sc.nextInt())
-          }
-      }
-
-      // Withdraw money from account
-      public static void withdraw(int balance, int amount) {
-          if (amount <= balance && amount >= 0) {
-              balance -= amount
-              print("Transaction successful, Current balance is " + balance)
-              list.add("Rupee/'s " + amount + " withdrawn.")
+          // Display transaction history to user
+          public static void transac(int balance) {
+              for (String i : list) {
+                  print(i)
+              }
               ask(balance)
-          } else {
-              print("Enter a valid amount(greater than equal to 0): ")
-              withdraw(balance, sc.nextInt())
           }
-      }
 
-      // Deposit money into account
-      public static void deposit(int balance, int amount) {
-          if (amount >= 0) {
-              balance += amount
-              print("Transaction successful, Current balance is " + balance)
-              list.add(amount + " ruppee/'s deposited!")
-              ask(balance)
-          } else {
-              print("Enter a valid amount(greater than equal to 0): ")
-              deposit(balance, sc.nextInt())
+          // Check if login information is valid
+          public static void login(String username, int pin) {
+              if (username.contains("test") && pin == 0000) {
+                  list.add("Logged in")
+                  ask(10000)
+              } else {
+                  print("Enter valid info!")
+                  print("Username followed by pin seperated with a space: ")
+                  login(sc.next(), sc.nextInt())
+              }
+          }
+
+          // Withdraw money from account
+          public static void withdraw(int balance, int amount) {
+              if (amount <= balance && amount >= 0) {
+                  balance -= amount
+                  print("Transaction successful, Current balance is " + balance)
+                  list.add("Rupee/'s " + amount + " withdrawn.")
+                  ask(balance)
+              } else {
+                  print("Enter a valid amount(greater than equal to 0): ")
+                  withdraw(balance, sc.nextInt())
+              }
+          }
+
+          // Deposit money into account
+          public static void deposit(int balance, int amount) {
+              if (amount >= 0) {
+                  balance += amount
+                  print("Transaction successful, Current balance is " + balance)
+                  list.add(amount + " ruppee/'s deposited!")
+                  ask(balance)
+              } else {
+                  print("Enter a valid amount(greater than equal to 0): ")
+                  deposit(balance, sc.nextInt())
