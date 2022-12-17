@@ -19,55 +19,13 @@
 
 
 # Psuesocode:- 
-      import java.util.Scanner
-      import java.util.ArrayList
-
-      class Main {
-
-          // Initialize Scanner object and ArrayList
-          public static Scanner sc = new Scanner(System.in)
-          public static ArrayList<String> list = new ArrayList<>()
-
-          // Display transaction history to user
-          public static void transac(int balance) {
-              for (String i : list) {
-                  print(i)
-              }
-              ask(balance)
-          }
-
-          // Check if login information is valid
-          public static void login(String username, int pin) {
-              if (username.contains("test") && pin == 0000) {
-                  list.add("Logged in")
-                  ask(10000)
-              } else {
-                  print("Enter valid info!")
-                  print("Username followed by pin seperated with a space: ")
-                  login(sc.next(), sc.nextInt())
-              }
-          }
-
-          // Withdraw money from account
-          public static void withdraw(int balance, int amount) {
-              if (amount <= balance && amount >= 0) {
-                  balance -= amount
-                  print("Transaction successful, Current balance is " + balance)
-                  list.add("Rupee/'s " + amount + " withdrawn.")
-                  ask(balance)
-              } else {
-                  print("Enter a valid amount(greater than equal to 0): ")
-                  withdraw(balance, sc.nextInt())
-              }
-          }
-
-          // Deposit money into account
-          public static void deposit(int balance, int amount) {
-              if (amount >= 0) {
-                  balance += amount
-                  print("Transaction successful, Current balance is " + balance)
-                  list.add(amount + " ruppee/'s deposited!")
-                  ask(balance)
-              } else {
-                  print("Enter a valid amount(greater than equal to 0): ")
-                  deposit(balance, sc.nextInt())
+- Import the Scanner and ArrayList classes from the java.util package.
+- Declare a static Scanner object and an ArrayList of strings.
+- Create a "transac" function that displays the transaction history and calls the "ask" function.
+- Create a "login" function that checks if the given username and pin are valid. If they are, add a log message to the ArrayList and call the "ask" function. If they are not, ask the user to enter valid information.
+- Create a "withdraw" function that allows the user to withdraw a specified amount from their account. If the amount is valid, update the balance and add a log message to the ArrayList. Otherwise, ask the user to enter a valid amount.
+- Create a "deposit" function that allows the user to deposit a specified amount into their account. If the amount is valid, update the balance and add a log message to the ArrayList. Otherwise, ask the user to enter a valid amount.
+- - Create a "transfer" function that allows the user to transfer a specified amount to another user's account. If the amount is valid, update the balance, add a log message to the ArrayList, and ask the user to enter the recipient's username. Otherwise, ask the user to enter a valid amount.
+- Create a "quit" function that allows the user to exit the program.
+- Create an "ask" function that presents the user with a list of options and allows them to choose one of the actions. If the user's choice is invalid, ask them to enter a valid input. If the user's choice is valid, execute the corresponding function.
+- In the main function, ask the user for their username and pin, and call the "login" function.
