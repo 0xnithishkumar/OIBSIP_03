@@ -1,5 +1,5 @@
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class AtmInterface {
   public static Scanner sc = new Scanner(System.in);
@@ -125,6 +125,8 @@ public class AtmInterface {
   }
 
   public static void main(String[] args) {
+    System.out.println();
+    System.out.println("Use username as 'test' and pin as '0000 for testing!");
     System.out.println("---------------**Login!**---------------");
     System.out.print("Enter user name: ");
     String username = sc.next();
